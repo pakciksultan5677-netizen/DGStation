@@ -1,0 +1,7 @@
+const platforms=["918KISS","MEGA888","PUSSY888","JOKER GAMING","Club SunCity","Lucky Palace","Newtown Live Casino","Rollex Casino","LIVE22 Metaverse"];
+const grid=document.querySelector("#gameGrid");platforms.forEach((name,i)=>{const el=document.createElement("div");el.className="game";el.innerHTML=`<i>${String(i+1).padStart(2,"0")}</i><span>${name}</span>`;grid.appendChild(el)});
+document.querySelectorAll("[data-modal]").forEach(b=>b.onclick=()=>document.getElementById(b.dataset.modal).classList.add("open"));
+document.querySelectorAll(".modal").forEach(m=>{m.querySelector(".close").onclick=()=>m.classList.remove("open");m.onclick=e=>{if(e.target===m)m.classList.remove("open")}});
+const toast=document.querySelector("#toast");function notify(t){toast.textContent=t;toast.classList.add("show");setTimeout(()=>toast.classList.remove("show"),2600)}
+document.querySelectorAll("[data-demo]").forEach(b=>b.onclick=()=>notify("UI siap — backend transaksi akan disambungkan pada fasa seterusnya."));
+const toggle=document.querySelector(".menu-toggle"),nav=document.querySelector(".topbar nav");toggle.onclick=()=>nav.classList.toggle("open");nav.querySelectorAll("a").forEach(a=>a.onclick=()=>nav.classList.remove("open"));
