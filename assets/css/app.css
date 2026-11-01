@@ -187,3 +187,18 @@ body:after{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;back
 @media(max-width:1100px){#promosi{grid-template-columns:1fr}#promosi .section-head{padding:0 6px}#promosi .section-head h2{font-size:32px}.hero-art .glass-card{right:-12px}}
 @media(max-width:820px){.hero{grid-template-columns:1fr;min-height:auto;padding:45px 28px}.hero-art{min-height:370px}.hero-art .glass-card{right:2%;top:26%}#promosi{margin:18px 14px;padding:25px 15px 35px}.promo-grid{grid-template-columns:1fr}.member-strip{margin-top:20px}}
 @media(max-width:480px){.hero{padding:38px 25px}.hero:before{inset:8px 8px}.hero-art{min-height:330px}.hero-art .glass-card{right:-8px;top:28%;width:135px}.hero-art .glass-card strong{font-size:33px}.hero-robot{width:85%;max-height:330px}#promosi .promo-card{min-height:150px}#promosi .promo-card .card-symbol{font-size:53px}.hero h1{font-size:42px}}
+
+/* Promotion Centre: compact horizontal neon slider, preserve other MASTER LOCK sections */
+#promosi .promo-carousel-wrap{min-width:0;display:grid;grid-template-columns:35px minmax(0,1fr) 35px;gap:9px;align-items:center}
+#promosi .promo-grid{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;scroll-behavior:smooth;min-width:0;padding:12px 3px 18px}
+#promosi .promo-grid::-webkit-scrollbar{display:none}
+#promosi .promo-card{box-sizing:border-box;flex:0 0 calc((100% - 28px)/3);scroll-snap-align:start;min-width:0;min-height:180px;align-items:center;flex-direction:row}
+#promosi .promo-card .card-symbol{flex:0 0 56px;font-size:50px}
+#promosi .promo-card .card-copy h3{font-size:clamp(20px,2vw,31px);overflow-wrap:anywhere}
+#promosi .promo-card .card-copy b{white-space:normal}
+#promosi .promo-arrow{height:49px;border:1px solid #f7ce59;border-radius:14px;background:linear-gradient(150deg,#082e80,#04133b);color:#ffdc75;font-size:35px;cursor:pointer;box-shadow:0 0 12px #118eff88}
+#promosi .promo-arrow:hover{background:#1459b0}
+#promosi .promo-slider-footer{grid-column:2;display:flex;justify-content:center;align-items:center;gap:16px;color:#a9dfff;font-size:12px}
+#promoPause{border:0;background:transparent;color:#ffdc75;font-weight:700;cursor:pointer}
+@media(max-width:1100px){#promosi .promo-card{flex-basis:calc((100% - 14px)/2)}}
+@media(max-width:650px){#promosi .promo-carousel-wrap{grid-template-columns:28px minmax(0,1fr) 28px;gap:5px}#promosi .promo-card{flex-basis:90%;min-height:170px}#promosi .promo-arrow{font-size:27px;height:42px}#promosi .promo-card .card-symbol{flex-basis:54px;font-size:47px}}
