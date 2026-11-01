@@ -27,6 +27,12 @@ const detailContent={
  midnight:{title:"MIDNIGHT BONUS 20%",items:["Masa: 12:00–5:00 pagi","Minimum Deposit: RM10","Turnover: ×2","Slot Only"]},
  telco:{title:"TELCO TOPUP",items:["Digi Share Credit","Pilihan Pin Reload untuk telco terpilih"]},
  deposit:{title:"DEPOSIT CENTRE",items:["Minimum Deposit: RM10","Maximum Deposit: RM1,000","Pilih bank dan platform","Muat naik resit","Satu bonus untuk setiap deposit"]},
+ birthday:{title:"BIRTHDAY BONUS 100%",items:["Maklumat tuntutan dan syarat penuh boleh disahkan dengan Customer Service."]},
+ weekend:{title:"WEEKEND BONUS 20%",items:["Maklumat tuntutan dan syarat penuh boleh disahkan dengan Customer Service."]},
+ daily:{title:"DAILY BONUS 10%",items:["Maklumat tuntutan dan syarat penuh boleh disahkan dengan Customer Service."]},
+ tng:{title:"TNG BONUS 15%",items:["Maklumat tuntutan dan syarat penuh boleh disahkan dengan Customer Service."]},
+ rebate:{title:"REBATE 5%",items:["Maklumat tuntutan dan syarat penuh boleh disahkan dengan Customer Service."]},
+ recommend:{title:"RECOMMEND 10%",items:["Maklumat tuntutan dan syarat penuh boleh disahkan dengan Customer Service."]},
  withdraw:{title:"WITHDRAW CENTRE",items:["Minimum Withdraw: RM50","Maximum Withdraw: RM5,000","Satu permohonan Pending pada satu masa","Status: Pending, Approved atau Rejected"]}
 };
 const detailModal=document.querySelector("#detailModal");
@@ -47,3 +53,27 @@ detailModal.querySelector(".close").addEventListener("click",closeDetail);
 document.querySelector("#detailClose").addEventListener("click",closeDetail);
 detailModal.addEventListener("click",event=>{if(event.target===detailModal)closeDetail()});
 document.addEventListener("keydown",event=>{if(event.key==="Escape"&&detailModal.classList.contains("open"))closeDetail()});
+
+/* Promotion slider: auto advance, arrows, touch scroll and pause on interaction */
+const promoSlider=document.querySelector("#promoSlider");
+if(promoSlider){
+ const promoCards=Array.from(promoSlider.querySelectorAll(".promo-card"));
+ const counter=document.querySelector("#promoCounter");
+ const pauseButton=document.querySelector("#promoPause");
+ let current=0,paused=window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+ function visibleCount(){return Math.max(1,Math.round(promoSlider.clientWidth/(promoCards[0]?.getBoundingClientRect().width||1)))}
+ function updateCounter(){counter.textContent=(current+1)+" / "+promoCards.length}
+ function goTo(index){current=(index+promoCards.length)%promoCards.length;promoCards[current].scrollIntoView({behavior:"smooth",block:"nearest",inline:"start"});updateCounter()}
+ document.querySelector(".promo-prev").addEventListener("click",()=>goTo(current-1));
+ document.querySelector(".promo-next").addEventListener("click",()=>goTo(current+1));
+ pauseButton.addEventListener("click",()=>{paused=!paused;pauseButton.textContent=paused?"Sambung Auto Slide":"Jeda Auto Slide";pauseButton.setAttribute("aria-pressed",String(paused))});
+ promoSlider.addEventListener("scroll",()=>{let best=0,dist=Infinity;promoCards.forEach((card,i)=>{const d=Math.abs(card.offsetLeft-promoSlider.scrollLeft-promoSlider.offsetLeft);if(d<dist){dist=d;best=i}});current=best;updateCounter()},{passive:true});
+ promoSlider.addEventListener("pointerenter",()=>promoSlider.dataset.hovered="true");
+ promoSlider.addEventListener("pointerleave",()=>delete promoSlider.dataset.hovered);
+ promoSlider.addEventListener("focusin",()=>promoSlider.dataset.focused="true");
+ promoSlider.addEventListener("focusout",()=>delete promoSlider.dataset.focused);
+ document.addEventListener("visibilitychange",()=>{if(document.hidden)promoSlider.dataset.hidden="true";else delete promoSlider.dataset.hidden});
+ if(paused){pauseButton.textContent="Sambung Auto Slide";pauseButton.setAttribute("aria-pressed","true")}
+ window.setInterval(()=>{if(!paused&&!promoSlider.dataset.hovered&&!promoSlider.dataset.focused&&!promoSlider.dataset.hidden&&!detailModal.classList.contains("open"))goTo(current+1)},4500);
+ updateCounter();
+}
