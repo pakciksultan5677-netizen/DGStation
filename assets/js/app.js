@@ -23,16 +23,16 @@ const toast=document.querySelector("#toast");function notify(t){toast.textConten
 document.querySelectorAll("[data-demo]").forEach(b=>b.onclick=()=>notify("UI siap — backend transaksi akan disambungkan pada fasa seterusnya."));
 const toggle=document.querySelector(".menu-toggle"),nav=document.querySelector(".topbar nav");toggle.onclick=()=>nav.classList.toggle("open");nav.querySelectorAll("a").forEach(a=>a.onclick=()=>nav.classList.remove("open"));
 const detailContent={
- welcome:{title:"WELCOME BACK 100%",items:["Minimum Topup: RM30","Min Cuci: ×3","Max Cuci: ×50","Max Bonus: RM388"]},
- midnight:{title:"MIDNIGHT BONUS 20%",items:["Masa: 12:00–5:00 pagi","Minimum Deposit: RM10","Turnover: ×2","Slot Only"]},
- telco:{title:"TELCO TOPUP",items:["Digi Share Credit","Pilihan Pin Reload untuk telco terpilih"]},
+ welcome:{title:"WELCOME BACK 100%",items:["Minimum Topup: RM30","Min Cuci: ×3","Max Cuci: ×50","Max Bonus: RM388","Slot Game sahaja","Tertakluk kepada kelayakan promosi"]},
+ midnight:{title:"MIDNIGHT BONUS 20%",items:["Minimum Deposit: RM10","Slot Game sahaja","Masa dan syarat turnover: sila sahkan dengan Customer Service sebelum tuntutan"]},
+ telco:{title:"TELCO TOPUP",items:["Digi Share Credit","Pilihan Pin Reload untuk telco terpilih","Kaedah dan ketersediaan topup: semak dengan Customer Service"]},
+ birthday:{title:"BIRTHDAY BONUS 100%",items:["Bonus Hari Jadi: 100%","Syarat kelayakan dan tuntutan: semak dengan Customer Service"]},
+ weekend:{title:"WEEKEND BONUS 20%",items:["Minimum Deposit: RM10","Minimum Cashout: RM50","Turnover minimum: ×2","Turnover maksimum: ×30","1 kali tuntutan sahaja","Slot Game sahaja","Setiap hujung minggu"]},
+ daily:{title:"DAILY BONUS 10%",items:["Bonus Harian: 10%","Minimum deposit, turnover dan had bonus: semak dengan Customer Service"]},
+ tng:{title:"TNG BONUS 15%",items:["Deposit menggunakan TNG eWallet","Bonus: 15%","Full Pay: 100%","Turnover: ×2","Slot Game sahaja"]},
+ rebate:{title:"REBATE 5%",items:["Rebate: 5%","Slot Game sahaja","Kekerapan rebate dan syarat tuntutan: semak dengan Customer Service"]},
+ recommend:{title:"RECOMMEND 10%",items:["Bonus Recommend: 10%","Kelayakan referral dan syarat tuntutan: semak dengan Customer Service"]},
  deposit:{title:"DEPOSIT CENTRE",items:["Minimum Deposit: RM10","Maximum Deposit: RM1,000","Pilih bank dan platform","Muat naik resit","Satu bonus untuk setiap deposit"]},
- birthday:{title:"BIRTHDAY BONUS 100%",items:["Maklumat tuntutan dan syarat penuh boleh disahkan dengan Customer Service."]},
- weekend:{title:"WEEKEND BONUS 20%",items:["Maklumat tuntutan dan syarat penuh boleh disahkan dengan Customer Service."]},
- daily:{title:"DAILY BONUS 10%",items:["Maklumat tuntutan dan syarat penuh boleh disahkan dengan Customer Service."]},
- tng:{title:"TNG BONUS 15%",items:["Maklumat tuntutan dan syarat penuh boleh disahkan dengan Customer Service."]},
- rebate:{title:"REBATE 5%",items:["Maklumat tuntutan dan syarat penuh boleh disahkan dengan Customer Service."]},
- recommend:{title:"RECOMMEND 10%",items:["Maklumat tuntutan dan syarat penuh boleh disahkan dengan Customer Service."]},
  withdraw:{title:"WITHDRAW CENTRE",items:["Minimum Withdraw: RM50","Maximum Withdraw: RM5,000","Satu permohonan Pending pada satu masa","Status: Pending, Approved atau Rejected"]}
 };
 const detailModal=document.querySelector("#detailModal");
