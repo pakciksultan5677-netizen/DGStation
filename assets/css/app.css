@@ -265,3 +265,14 @@ main{max-width:1500px;margin:auto}
 .hero-robot-picture .hero-robot{display:block;width:100%!important;max-width:100%!important;height:100%!important;max-height:none!important;object-fit:contain;object-position:center center;filter:drop-shadow(0 0 17px #007dff)!important}
 @media(max-width:820px){.hero-robot-picture{height:340px;width:min(82%,390px)}}
 @media(max-width:480px){.hero-robot-picture{height:300px;width:78%}}
+
+/* Anchor cropped robot torso to hero floor instead of floating midair */
+.hero-art{align-self:stretch!important;align-items:end!important;isolation:isolate}
+.hero-robot-picture{align-self:end!important;margin-bottom:-33px!important;height:440px!important;overflow:hidden!important;align-items:flex-end!important;filter:drop-shadow(0 7px 15px #008affaa)}
+.hero-robot-picture .hero-robot{height:100%!important;object-fit:contain!important;object-position:center bottom!important;transform:translateY(14px)!important}
+.hero-art:after{content:"";position:absolute;z-index:3;bottom:-8px;left:14%;width:62%;height:28px;border-radius:50%;background:radial-gradient(ellipse,#00aaff99 0%,#0878ee55 36%,transparent 72%);filter:blur(10px);pointer-events:none}
+.hero-casino-decor .deco-crown{opacity:.18!important}
+.hero-casino-decor .deco-cards{opacity:.18!important}
+.hero-casino-decor .deco-dice{opacity:.18!important}
+@media(max-width:820px){.hero-robot-picture{height:350px!important;margin-bottom:-32px!important}}
+@media(max-width:480px){.hero-robot-picture{height:305px!important;margin-bottom:-30px!important}.hero-art:after{bottom:-10px}}
