@@ -3,3 +3,8 @@
 .games .game-art-card{display:block;padding:0;overflow:hidden;aspect-ratio:1.52;border:1px solid rgba(69,176,255,.65);border-radius:18px;background:#041b43;box-shadow:0 0 18px rgba(0,125,255,.2);transition:transform .2s ease,box-shadow .2s ease}
 .games .game-art-card img{display:block;width:100%;height:100%;object-fit:fill}
 .games .game-art-card:hover{transform:translateY(-4px);box-shadow:0 0 25px rgba(12,157,255,.5)}
+
+/* Rounded-in silhouette: clip the actual game artwork, not only its outer container */
+.games .game-art-card{border-radius:30px;clip-path:inset(0 round 30px);-webkit-mask-image:-webkit-radial-gradient(white,black)}
+.games .game-art-card img{border-radius:30px;clip-path:inset(0 round 30px)}
+@media(max-width:600px){.games .game-art-card,.games .game-art-card img{border-radius:24px;clip-path:inset(0 round 24px)}}
