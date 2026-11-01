@@ -28,7 +28,7 @@ const detailContent={
  telco:{title:"TELCO TOPUP",items:["Digi Share Credit","Pilihan Pin Reload untuk telco terpilih","Kaedah dan ketersediaan topup: semak dengan Customer Service"]},
  birthday:{title:"BIRTHDAY BONUS 100%",items:["Minimum Deposit: RM10","Full Pay: 100%","Turnover: ×2","Slot Game sahaja"]},
  weekend:{title:"WEEKEND BONUS 20%",items:["Minimum Deposit: RM10","Minimum Cashout: RM50","Turnover minimum: ×2","Turnover maksimum: ×30","1 kali tuntutan sahaja","Slot Game sahaja","Setiap hujung minggu"]},
- daily:{title:"DAILY BONUS 10%",items:["Bonus Harian: 10%","Minimum deposit, turnover dan had bonus: semak dengan Customer Service"]},
+ daily:{title:"DAILY BONUS 10%",items:["Minimum Deposit: RM10","Full Pay: 100%","Turnover: ×2","Slot Game Only"]},
  tng:{title:"TNG BONUS 15%",items:["Deposit menggunakan TNG eWallet","Bonus: 15%","Full Pay: 100%","Turnover: ×2","Slot Game sahaja"]},
  rebate:{title:"REBATE 5%",items:["Rebate: 5%","Slot Game sahaja","Kekerapan rebate dan syarat tuntutan: semak dengan Customer Service"]},
  recommend:{title:"RECOMMEND 10%",items:["Bonus Recommend: 10%","Kelayakan referral dan syarat tuntutan: semak dengan Customer Service"]},
