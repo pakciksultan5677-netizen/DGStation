@@ -8,3 +8,11 @@
 .games .game-art-card{border-radius:30px;clip-path:inset(0 round 30px);-webkit-mask-image:-webkit-radial-gradient(white,black)}
 .games .game-art-card img{border-radius:30px;clip-path:inset(0 round 30px)}
 @media(max-width:600px){.games .game-art-card,.games .game-art-card img{border-radius:24px;clip-path:inset(0 round 24px)}}
+
+/* Official DGStation PNG — logo display MASTER LOCK */
+.dg-logo{display:block;object-fit:contain;object-position:left center;width:auto;height:auto;max-width:100%}
+.topbar .brand{flex:0 0 auto;min-width:0}
+.dg-logo-header{width:clamp(155px,17vw,255px);max-height:64px}
+.dg-logo-footer{width:min(260px,72vw);max-height:85px}
+@media(max-width:820px){.topbar{gap:12px}.dg-logo-header{width:clamp(142px,38vw,205px);max-height:52px}}
+@media(max-width:390px){.dg-logo-header{width:142px}.topbar .auth .btn{padding:10px 12px}}
